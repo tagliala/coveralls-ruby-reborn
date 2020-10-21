@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.18.0 / 2020-09-07
+
+* [ENHANCEMENT] Refactor HTTP client [#10](https://github.com/tagliala/coveralls-ruby-reborn/pull/10)
+* [ENHANCEMENT] Update dependencies
+
 ## 0.17.0 / 2020-08-26
 
 * [FEATURE] Add SimpleCov 0.19.0 compatibility
