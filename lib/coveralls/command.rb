@@ -9,7 +9,7 @@ module Coveralls
       return unless ensure_can_run_locally!
 
       ENV['COVERALLS_RUN_LOCALLY'] = 'true'
-      cmds = ['bundle exec rake']
+      cmds = ['bundle exec rails test']
 
       if File.exist?('.travis.yml')
         cmds = begin
