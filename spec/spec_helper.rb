@@ -13,7 +13,7 @@ class InceptionFormatter
 end
 
 def setup_formatter
-  SimpleCov.formatter = if ENV['TRAVIS'] || ENV['COVERALLS_REPO_TOKEN']
+  SimpleCov.formatter = if ENV['CI'] || ENV['COVERALLS_REPO_TOKEN']
                           InceptionFormatter
                         else
                           SimpleCov::Formatter::HTMLFormatter
