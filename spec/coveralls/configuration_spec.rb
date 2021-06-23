@@ -84,6 +84,7 @@ describe Coveralls::Configuration do
         {
           appveyor:        'APPVEYOR',
           circleci:        'CIRCLECI',
+          github:          'GITHUB_ACTIONS',
           gitlab:          'GITLAB_CI',
           jenkins:         'JENKINS_URL',
           semaphore:       'SEMAPHORE',
@@ -140,6 +141,10 @@ describe Coveralls::Configuration do
 
       context 'when using CircleCI' do
         it_behaves_like 'a service', :circleci
+      end
+
+      context 'when using GitHub Actions' do
+        it_behaves_like 'a service', :github
       end
 
       context 'when using GitLab CI' do
@@ -211,6 +216,30 @@ describe Coveralls::Configuration do
       described_class.define_service_params_for_circleci(config)
       expect(config[:service_name]).to eq('circleci')
       expect(config[:service_number]).to eq(circle_build_num)
+    end
+  end
+
+  describe '.define_service_params_for_github' do
+    let(:commit_sha) { SecureRandom.hex(32) }
+    let(:service_job_id) { 1234 }
+    let(:service_branch) { 'feature' }
+    let(:service_number) { 5678 }
+
+    before do
+      allow(ENV).to receive(:[]).with('GITHUB_RUN_NUMBER').and_return(service_number)
+      allow(ENV).to receive(:[]).with('GITHUB_RUN_ID').and_return(service_job_id)
+      allow(ENV).to receive(:[]).with('GITHUB_REF').and_return(service_branch)
+      allow(ENV).to receive(:[]).with('GITHUB_SHA').and_return(commit_sha)
+    end
+
+    it 'sets the expected parameters' do
+      config = {}
+      described_class.define_service_params_for_github(config)
+      expect(config[:service_name]).to eq('github')
+      expect(config[:service_number]).to eq(service_number)
+      expect(config[:service_job_id]).to eq(service_job_id)
+      expect(config[:service_branch]).to eq(service_branch)
+      expect(config[:commit_sha]).to eq(commit_sha)
     end
   end
 

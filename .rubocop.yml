@@ -17,13 +17,13 @@ Layout/LineLength:
   Enabled: false
 
 Metrics/AbcSize:
-  Max: 44.11
+  Max: 46.31
 
 Metrics/CyclomaticComplexity:
-  Max: 19
+  Max: 20
 
 Metrics/PerceivedComplexity:
-  Max: 20
+  Max: 21
 
 Metrics/BlockLength:
   Exclude:

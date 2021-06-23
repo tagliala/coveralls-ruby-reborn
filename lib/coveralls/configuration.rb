@@ -45,6 +45,8 @@ module Coveralls
           define_service_params_for_tddium(config)
         elsif ENV['GITLAB_CI']
           define_service_params_for_gitlab(config)
+        elsif ENV['GITHUB_ACTIONS']
+          define_service_params_for_github(config)
         elsif ENV['COVERALLS_RUN_LOCALLY'] || Coveralls.testing
           define_service_params_for_coveralls_local(config)
         end
@@ -112,6 +114,14 @@ module Coveralls
         config[:service_job_id]     = ENV['CI_BUILD_ID']
         config[:service_branch]     = ENV['CI_BUILD_REF_NAME']
         config[:commit_sha]         = ENV['CI_BUILD_REF']
+      end
+
+      def define_service_params_for_github(config)
+        config[:service_name]         = 'github'
+        config[:service_number]       = ENV['GITHUB_RUN_NUMBER']
+        config[:service_job_id]       = ENV['GITHUB_RUN_ID']
+        config[:service_branch]       = ENV['GITHUB_REF']
+        config[:commit_sha]           = ENV['GITHUB_SHA']
       end
 
       def define_service_params_for_coveralls_local(config)
@@ -216,6 +226,8 @@ module Coveralls
             jenkins_env_hash
           elsif ENV['SEMAPHORE']
             semaphore_env_hash
+          elsif ENV['GITHUB_ACTIONS']
+            github_actions_env_hash
           else
             {}
           end
@@ -254,6 +266,13 @@ module Coveralls
           travis_job_id:       ENV['TRAVIS_JOB_ID'],
           travis_pull_request: ENV['TRAVIS_PULL_REQUEST'],
           branch:              ENV['TRAVIS_BRANCH']
+        }
+      end
+
+      def github_actions_env_hash
+        {
+          branch:     ENV['GITHUB_REF'],
+          commit_sha: ENV['REVISION']
         }
       end
     end
