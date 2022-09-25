@@ -32,8 +32,9 @@ describe Coveralls do
     it 'outputs to stdout when running locally' do
       described_class.testing = false
       described_class.run_locally = true
+
       silence do
-        described_class.should_run?
+        expect(described_class.should_run?).to be false
       end
     end
   end
@@ -99,12 +100,28 @@ describe Coveralls do
 
   describe '#setup!' do
     it 'sets SimpleCov adapter' do
-      # rubocop:disable Lint/ConstantDefinitionInBlock, RSpec/LeakyConstantDeclaration
-      SimpleCovTmp = SimpleCov
-      Object.send :remove_const, :SimpleCov
-      silence { described_class.setup! }
-      SimpleCov = SimpleCovTmp
-      # rubocop:enable Lint/ConstantDefinitionInBlock, RSpec/LeakyConstantDeclaration
+      previous_adapter = described_class.adapter
+      described_class.adapter = nil
+
+      expect do
+        silence { described_class.setup! }
+      end.to change(described_class, :adapter).from(nil).to(:simplecov)
+    ensure
+      described_class.adapter = previous_adapter
+    end
+
+    context 'when SimpleCov is not defined' do
+      # rubocop:disable RSpec/LeakyConstantDeclaration
+      it 'tries to load it' do
+        SimpleCovTmp = SimpleCov
+        Object.send :remove_const, :SimpleCov
+        expect do
+          silence { described_class.setup! }
+        end.not_to raise_error
+      ensure
+        SimpleCov = SimpleCovTmp
+      end
+      # rubocop:enable RSpec/LeakyConstantDeclaration
     end
   end
 end
