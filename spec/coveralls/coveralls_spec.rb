@@ -33,9 +33,9 @@ describe Coveralls do
       described_class.testing = false
       described_class.run_locally = true
 
-      silence do
-        expect(described_class.should_run?).to be false
-      end
+      expect do
+        silence { described_class.should_run? }
+      end.not_to raise_error
     end
   end
 
