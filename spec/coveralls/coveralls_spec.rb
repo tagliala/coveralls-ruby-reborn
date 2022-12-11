@@ -47,7 +47,7 @@ describe Coveralls do
         end
       end
 
-      expect(::SimpleCov).to have_received(:start)
+      expect(SimpleCov).to have_received(:start)
     end
 
     it 'uses string' do
@@ -55,7 +55,7 @@ describe Coveralls do
         described_class.wear! 'test_frameworks'
       end
 
-      expect(::SimpleCov).to have_received(:start).with 'test_frameworks'
+      expect(SimpleCov).to have_received(:start).with 'test_frameworks'
     end
 
     it 'uses default' do
@@ -63,8 +63,8 @@ describe Coveralls do
         described_class.wear!
       end
 
-      expect(::SimpleCov).to have_received(:start).with no_args
-      expect(::SimpleCov.filters.map(&:filter_argument)).to include 'vendor'
+      expect(SimpleCov).to have_received(:start).with no_args
+      expect(SimpleCov.filters.map(&:filter_argument)).to include 'vendor'
     end
   end
 
@@ -76,7 +76,7 @@ describe Coveralls do
         end
       end
 
-      expect(::SimpleCov.formatter).to be Coveralls::NilFormatter
+      expect(SimpleCov.formatter).to be Coveralls::NilFormatter
     end
   end
 
