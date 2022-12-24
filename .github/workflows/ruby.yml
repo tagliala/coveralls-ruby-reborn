@@ -20,6 +20,8 @@ jobs:
             experimental: true
           - ruby-version: 'jruby-9.3'
             experimental: true
+          - ruby-version: 'jruby-9.4'
+            experimental: true
 
     continue-on-error: ${{ matrix.experimental }}
 
