@@ -65,7 +65,7 @@ module Coveralls
           line_number = branch_data.split(', ')[2].to_i
           data.each_value do |hits|
             branch_number += 1
-            branches_properties.concat([line_number, 0, branch_number, hits])
+            branches_properties.push(line_number, 0, branch_number, hits)
           end
         end
         branches_properties
