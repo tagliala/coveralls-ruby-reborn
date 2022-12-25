@@ -24,13 +24,13 @@ Gem::Specification.new do |gem|
   gem.metadata['changelog_uri'] = 'https://github.com/tagliala/coveralls-ruby-reborn/blob/main/CHANGELOG.md'
   gem.metadata['source_code_uri'] = 'https://github.com/tagliala/coveralls-ruby-reborn'
 
-  gem.required_ruby_version = '>= 2.5'
+  gem.required_ruby_version = '>= 2.6'
 
-  gem.add_dependency 'simplecov', '>= 0.18.1', '< 0.23.0'
-  gem.add_dependency 'term-ansicolor', '~> 1.6'
-  gem.add_dependency 'thor', '>= 0.20.3', '< 2.0'
-  gem.add_dependency 'tins', '~> 1.16'
+  gem.add_dependency 'simplecov', '~> 0.22.0'
+  gem.add_dependency 'term-ansicolor', '~> 1.7'
+  gem.add_dependency 'thor', '~> 1.2'
+  gem.add_dependency 'tins', '~> 1.32'
 
-  gem.add_development_dependency 'bundler', '>= 1.16', '< 3'
+  gem.add_development_dependency 'bundler', '~> 2.0'
   gem.add_development_dependency 'simplecov-lcov', '~> 0.8.0'
 end

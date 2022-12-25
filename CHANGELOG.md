@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.26.0 / 2022-12-25
+
+* [FEATURE] Drop Ruby 2.5 support
+* [FEATURE] Add SimpleCov 0.22.0 compatibility
+* [ENHANCEMENT] Test against Ruby 3.2 and JRuby 3.4
+
 ## 0.25.0 / 2022-08-05
 
 * [ENHANCEMENT] Bump `jruby-openssl` requirement to `0.14.0` [#39](https://github.com/tagliala/coveralls-ruby-reborn/pull/39)
