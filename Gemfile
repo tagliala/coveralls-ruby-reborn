@@ -11,7 +11,7 @@ end
 
 gem 'rake', '~> 13.0'
 gem 'rspec', '~> 3.12'
-gem 'rubocop', '~> 1.41'
+gem 'rubocop', '~> 1.42'
 gem 'rubocop-performance', '~> 1.15'
 gem 'rubocop-rake', '~> 0.6.0'
 gem 'rubocop-rspec', '~> 2.16'
