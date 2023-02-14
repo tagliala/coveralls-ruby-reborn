@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.27.0 / 2023-02-14
+
+* [FEATURE] Add Buildkite CI support [#43](https://github.com/tagliala/coveralls-ruby-reborn/pull/43)
+* [ENHANCEMENT] Update development dependencies
+
 ## 0.26.0 / 2022-12-25
 
 * [FEATURE] Drop Ruby 2.5 support
