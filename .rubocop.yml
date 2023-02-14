@@ -17,13 +17,17 @@ Layout/LineLength:
   Enabled: false
 
 Metrics/AbcSize:
-  Max: 44.11
+  Max: 26.31
+  Exclude:
+    - 'lib/coveralls/configuration.rb'
 
 Metrics/CyclomaticComplexity:
-  Max: 19
+  Exclude:
+    - 'lib/coveralls/configuration.rb'
 
 Metrics/PerceivedComplexity:
-  Max: 20
+  Exclude:
+    - 'lib/coveralls/configuration.rb'
 
 Metrics/BlockLength:
   Exclude:
@@ -38,7 +42,7 @@ Metrics/ModuleLength:
     - 'spec/**/*'
 
 RSpec/ExampleLength:
-  Max: 10
+  Max: 15
 
 RSpec/MultipleExpectations:
   Enabled: false
