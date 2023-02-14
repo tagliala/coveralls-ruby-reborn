@@ -85,6 +85,7 @@ describe Coveralls::Configuration do
           appveyor:        'APPVEYOR',
           circleci:        'CIRCLECI',
           gitlab:          'GITLAB_CI',
+          buildkite:       'BUILDKITE',
           jenkins:         'JENKINS_URL',
           semaphore:       'SEMAPHORE',
           tddium:          'TDDIUM',
@@ -144,6 +145,10 @@ describe Coveralls::Configuration do
 
       context 'when using GitLab CI' do
         it_behaves_like 'a service', :gitlab
+      end
+
+      context 'when using Buildkite' do
+        it_behaves_like 'a service', :buildkite
       end
 
       context 'when using Jenkins' do
@@ -253,6 +258,38 @@ describe Coveralls::Configuration do
         service_job_id:     service_job_id,
         service_branch:     service_branch,
         commit_sha:         commit_sha
+      )
+    end
+  end
+
+  describe '.define_service_params_for_buildkite' do
+    let(:service_number) { 5678 }
+    let(:service_job_id) { 1234 }
+    let(:service_branch) { 'feature' }
+    let(:service_build_url) { SecureRandom.hex(4) }
+    let(:service_pull_request) { SecureRandom.hex(4) }
+    let(:commit_sha) { SecureRandom.hex(32) }
+
+    before do
+      allow(ENV).to receive(:[]).with('BUILDKITE_BUILD_NUMBER').and_return(service_number)
+      allow(ENV).to receive(:[]).with('BUILDKITE_BUILD_ID').and_return(service_job_id)
+      allow(ENV).to receive(:[]).with('BUILDKITE_BRANCH').and_return(service_branch)
+      allow(ENV).to receive(:[]).with('BUILDKITE_BUILD_URL').and_return(service_build_url)
+      allow(ENV).to receive(:[]).with('BUILDKITE_PULL_REQUEST').and_return(service_pull_request)
+      allow(ENV).to receive(:[]).with('BUILDKITE_COMMIT').and_return(commit_sha)
+    end
+
+    it 'sets the expected parameters' do
+      config = {}
+      described_class.define_service_params_for_buildkite(config)
+      expect(config).to include(
+        service_name:         'buildkite',
+        service_number:       service_number,
+        service_job_id:       service_job_id,
+        service_branch:       service_branch,
+        service_build_url:    service_build_url,
+        service_pull_request: service_pull_request,
+        commit_sha:           commit_sha
       )
     end
   end
