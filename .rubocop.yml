@@ -21,6 +21,10 @@ Metrics/AbcSize:
   Exclude:
     - 'lib/coveralls/configuration.rb'
 
+Metrics/ClassLength:
+  Exclude:
+    - 'lib/coveralls/configuration.rb'
+
 Metrics/CyclomaticComplexity:
   Exclude:
     - 'lib/coveralls/configuration.rb'
