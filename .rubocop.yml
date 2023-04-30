@@ -5,6 +5,8 @@ require:
 
 AllCops:
   NewCops: enable
+  DisplayStyleGuide: true
+  ExtraDetails: true
   Exclude:
     - 'spec/coveralls/fixtures/**/*'
     - 'vendor/bundle/**/*'
