@@ -30,7 +30,4 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'term-ansicolor', '~> 1.7'
   gem.add_dependency 'thor', '~> 1.2'
   gem.add_dependency 'tins', '~> 1.32'
-
-  gem.add_development_dependency 'bundler', '~> 2.0'
-  gem.add_development_dependency 'simplecov-lcov', '~> 0.8.0'
 end

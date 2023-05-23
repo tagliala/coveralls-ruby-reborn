@@ -7,6 +7,7 @@ AllCops:
   NewCops: enable
   DisplayStyleGuide: true
   ExtraDetails: true
+  TargetRubyVersion: 2.6
   Exclude:
     - 'spec/coveralls/fixtures/**/*'
     - 'vendor/bundle/**/*'
