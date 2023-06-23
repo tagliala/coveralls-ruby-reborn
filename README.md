@@ -7,14 +7,14 @@ An up-to-date fork of [lemurheavy/coveralls-ruby](https://github.com/lemurheavy/
 
 ### PREREQUISITES
 
-- Using a supported repo host ([GitHub](http://github.com/) | [Gitlab](https://gitlab.com/) |
+- Using a supported repo host ([GitHub](https://github.com/) | [Gitlab](https://gitlab.com/) |
   [Bitbucket](https://bitbucket.org/))
 - Building on a supported CI service (see
-  [supported CI services](https://docs.coveralls.io/supported-ci-services) here)
+  [supported CI services](https://docs.coveralls.io/ci-services) here)
 - Any Ruby project or test framework supported by
   [SimpleCov](https://github.com/colszowka/simplecov) is supported by the
   [coveralls-ruby-reborn](https://github.com/tagliala/coveralls-ruby-reborn) gem. This includes
-  all your favorites, like [RSpec](http://rspec.info/), Cucumber, and Test::Unit.
+  all your favorites, like [RSpec](https://rspec.info/), Cucumber, and Test::Unit.
 
 *Please note that [SimpleCov](https://github.com/colszowka/simplecov) only supports Ruby 1.9 and later.*
 
@@ -153,10 +153,10 @@ bundle exec rake :test_with_coveralls
 [coveralls-ruby-reborn](https://github.com/tagliala/coveralls-ruby-reborn) also allows you to
 upload coverage data manually by running your test suite locally.
 
-To do this with [RSpec](http://rspec.info/), just type `bundle exec coveralls push` in your project
+To do this with [RSpec](https://rspec.info/), just type `bundle exec coveralls push` in your project
 directory.
 
-This will run [RSpec](http://rspec.info/) and upload the coverage data to
+This will run [RSpec](https://rspec.info/) and upload the coverage data to
 [Coveralls.io](https://coveralls.io) as a one-off build, passing along any configuration options
 specified in `.coveralls.yml`.
 
