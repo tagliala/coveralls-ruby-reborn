@@ -1,7 +1,7 @@
 # [Coveralls Reborn](https://coveralls.io) for Ruby [![Coverage Status](https://coveralls.io/repos/github/tagliala/coveralls-ruby-reborn/badge.svg?branch=main)](https://coveralls.io/github/tagliala/coveralls-ruby-reborn?branch=main) ![Build Status](https://github.com/tagliala/coveralls-ruby-reborn/actions/workflows/ruby.yml/badge.svg) [![Gem Version](https://badge.fury.io/rb/coveralls_reborn.svg)](https://badge.fury.io/rb/coveralls_reborn)
 
-[Coveralls.io](http://coveralls.io) was designed with Ruby projects in mind, so we've made it as
-easy as possible to get started using [Coveralls](http://coveralls.io) with Ruby and Rails project.
+[Coveralls.io](https://coveralls.io) was designed with Ruby projects in mind, so we've made it as
+easy as possible to get started using [Coveralls](https://coveralls.io) with Ruby and Rails project.
 
 An up-to-date fork of [lemurheavy/coveralls-ruby](https://github.com/lemurheavy/coveralls-ruby)
 
