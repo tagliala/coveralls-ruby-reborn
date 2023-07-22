@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = 'https://coveralls.io'
   gem.license       = 'MIT'
 
-  gem.files         = `git ls-files`.split($OUTPUT_RECORD_SEPARATOR)
+  gem.files         = Dir.glob('{CHANGELOG.md,LICENSE,README.md,lib/**/*.rb,bin/coveralls}', File::FNM_DOTMATCH)
   gem.executables   = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
   gem.name          = 'coveralls_reborn'
   gem.require_paths = ['lib']

@@ -6,13 +6,14 @@ source 'https://rubygems.org'
 gemspec
 
 platforms :jruby do
-  gem 'jruby-openssl', '~> 0.14.1'
+  gem 'jruby-openssl', '~> 0.14.2'
 end
 
 gem 'bundler', '~> 2.0'
 gem 'rake', '~> 13.0'
 gem 'rspec', '~> 3.12'
 gem 'rubocop', '~> 1.50'
+gem 'rubocop-packaging', '~> 0.5.2'
 gem 'rubocop-performance', '~> 1.17'
 gem 'rubocop-rake', '~> 0.6.0'
 gem 'rubocop-rspec', '~> 2.20'
