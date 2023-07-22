@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.28.0 / 2023-07-22
+
+* [ENHANCEMENT] Reduce gem size
+
 ## 0.27.0 / 2023-02-14
 
 * [FEATURE] Add Buildkite CI support [#43](https://github.com/tagliala/coveralls-ruby-reborn/pull/43)
