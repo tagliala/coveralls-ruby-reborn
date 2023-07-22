@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 gemspec
 
 platforms :jruby do
-  gem 'jruby-openssl', '~> 0.14.1'
+  gem 'jruby-openssl', '~> 0.14.2'
 end
 
 gem 'bundler', '~> 2.0'
