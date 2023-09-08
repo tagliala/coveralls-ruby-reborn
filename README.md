@@ -70,14 +70,14 @@ For a Ruby app:
 # ./test/test_helper.rb
 # ..etc..
 
-require 'coveralls_reborn'
+require 'coveralls'
 Coveralls.wear!
 ```
 
 For a Rails app:
 
 ```ruby
-require 'coveralls_reborn'
+require 'coveralls'
 Coveralls.wear!('rails')
 ```
 
@@ -99,7 +99,7 @@ directly:
 
 ```ruby
 require 'simplecov'
-require 'coveralls_reborn'
+require 'coveralls'
 
 SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 SimpleCov.start do
@@ -111,7 +111,7 @@ Or alongside another formatter, like so:
 
 ```ruby
 require 'simplecov'
-require 'coveralls_reborn'
+require 'coveralls'
 
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
@@ -130,7 +130,7 @@ formatter, simply omit the Coveralls formatter, then add the rake task `coverall
 `Rakefile` as a dependency to your testing task, like so:
 
 ```ruby
-require 'coveralls_reborn/rake/task'
+require 'coveralls/rake/task'
 Coveralls::RakeTask.new
 task :test_with_coveralls => [:spec, :features, 'coveralls:push']
 ```
