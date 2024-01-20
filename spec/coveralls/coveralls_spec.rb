@@ -114,7 +114,7 @@ describe Coveralls do
       # rubocop:disable RSpec/LeakyConstantDeclaration
       it 'tries to load it' do
         SimpleCovTmp = SimpleCov
-        Object.send :remove_const, :SimpleCov
+        Object.send :remove_const, :SimpleCov # rubocop:disable RSpec/RemoveConst
         expect do
           silence { described_class.setup! }
         end.not_to raise_error
