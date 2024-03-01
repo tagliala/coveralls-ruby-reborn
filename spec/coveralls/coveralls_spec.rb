@@ -76,7 +76,7 @@ describe Coveralls do
         end
       end
 
-      expect(SimpleCov.formatter).to be Coveralls::NilFormatter
+      expect(SimpleCov.formatter).to be described_class::NilFormatter
     end
   end
 
