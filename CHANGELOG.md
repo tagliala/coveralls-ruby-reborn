@@ -94,7 +94,7 @@
 ## 0.13.3 / 2019-10-13
 
 * [FIX] Do not rescue from LoadError with required gems
-* [FIX] Fix multipart content-type delimeter [lemurheavy/coveralls-ruby#154](https://github.com/lemurheavy/coveralls-ruby/pull/154)
+* [FIX] Fix multipart content-type delimiter [lemurheavy/coveralls-ruby#154](https://github.com/lemurheavy/coveralls-ruby/pull/154)
 * [ENHANCEMENT] Test against latest JRuby version
 * [ENHANCEMENT] Update dependencies
 

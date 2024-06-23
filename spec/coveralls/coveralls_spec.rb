@@ -10,7 +10,7 @@ describe Coveralls do
   end
 
   describe '#will_run?' do
-    it 'checks CI environemnt variables' do
+    it 'checks CI environment variables' do
       expect(described_class).to be_will_run
     end
 
