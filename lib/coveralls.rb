@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require 'coveralls/version'
-require 'coveralls/configuration'
-require 'coveralls/api'
-require 'coveralls/output'
-require 'coveralls/simplecov'
+require_relative 'coveralls/version'
+require_relative 'coveralls/configuration'
+require_relative 'coveralls/api'
+require_relative 'coveralls/output'
+require_relative 'coveralls/simplecov'
 
 module Coveralls
   class << self
