@@ -1,4 +1,4 @@
-name: Rubocop
+name: RuboCop
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   rubocop:
-    name: Rubocop
+    name: RuboCop
     runs-on: ${{ matrix.os }}
     env:
       BUNDLE_JOBS: 4
@@ -26,4 +26,4 @@ jobs:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true
     - name: Ruby linter
-      run: bundle exec rubocop
+      run: bundle exec rubocop --format github
