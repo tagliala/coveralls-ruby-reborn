@@ -10,8 +10,10 @@ AllCops:
   ExtraDetails: true
   TargetRubyVersion: 2.6
   Exclude:
-    - 'spec/coveralls/fixtures/**/*'
-    - 'vendor/bundle/**/*'
+    - .git/**/*
+    - spec/coveralls/fixtures/**/*
+    - tmp/**/*
+    - vendor/**/*
 
 Layout/HashAlignment:
   EnforcedColonStyle: table
