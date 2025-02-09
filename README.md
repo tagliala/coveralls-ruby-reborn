@@ -1,4 +1,9 @@
-# [Coveralls Reborn](https://coveralls.io) for Ruby [![Coverage Status](https://coveralls.io/repos/github/tagliala/coveralls-ruby-reborn/badge.svg?branch=main)](https://coveralls.io/github/tagliala/coveralls-ruby-reborn?branch=main) ![Build Status](https://github.com/tagliala/coveralls-ruby-reborn/actions/workflows/ruby.yml/badge.svg) [![Gem Version](https://badge.fury.io/rb/coveralls_reborn.svg)](https://badge.fury.io/rb/coveralls_reborn)
+# [Coveralls Reborn](https://coveralls.io) for Ruby
+
+[![Gem Version](https://badge.fury.io/rb/coveralls_reborn.svg)](https://badge.fury.io/rb/coveralls_reborn)
+[![Build Status](https://github.com/tagliala/coveralls-ruby-reborn/actions/workflows/ruby.yml/badge.svg)](https://github.com/tagliala/coveralls-ruby-reborn/actions/workflows/ruby.yml)
+[![Rubocop](https://github.com/tagliala/coveralls-ruby-reborn/actions/workflows/rubocop.yml/badge.svg)](https://github.com/tagliala/coveralls-ruby-reborn/actions/workflows/rubocop.yml)
+[![Coverage Status](https://coveralls.io/repos/github/tagliala/coveralls-ruby-reborn/badge.svg?branch=main)](https://coveralls.io/github/tagliala/coveralls-ruby-reborn?branch=main)
 
 [Coveralls.io](https://coveralls.io) was designed with Ruby projects in mind, so we've made it as
 easy as possible to get started using [Coveralls](https://coveralls.io) with Ruby and Rails project.
