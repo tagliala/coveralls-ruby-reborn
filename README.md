@@ -21,8 +21,6 @@ An up-to-date fork of [lemurheavy/coveralls-ruby](https://github.com/lemurheavy/
   [coveralls-ruby-reborn](https://github.com/tagliala/coveralls-ruby-reborn) gem. This includes
   all your favorites, like [RSpec](https://rspec.info/), Cucumber, and Test::Unit.
 
-*Please note that [SimpleCov](https://github.com/colszowka/simplecov) only supports Ruby 1.9 and later.*
-
 ### INSTALLING THE GEM
 
 You shouldn't need more than a quick change to get your project on Coveralls. Just include
@@ -34,9 +32,6 @@ Gemfile like so:
 
 gem 'coveralls_reborn', require: false
 ```
-
-While [SimpleCov](https://github.com/colszowka/simplecov) only supports Ruby 1.9+, using the
-Coveralls gem will not fail builds on earlier Rubies or other flavors of Ruby.
 
 ### CONFIGURATION
 
