@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.29.0 / 2025-06-15
+
+* [ENHANCEMENT] Prefer `require_relative` for internal requires [#51](https://github.com/tagliala/coveralls-ruby-reborn/pull/51)
+* [ENHANCEMENT] Remove `truthy` dependency as obsolete and unsupported [#50](https://github.com/tagliala/coveralls-ruby-reborn/pull/50)
+* [ENHANCEMENT] Test against Ruby 3.4
+
 ## 0.28.0 / 2023-07-22
 
 * [ENHANCEMENT] Reduce gem size

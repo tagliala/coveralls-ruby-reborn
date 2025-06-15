@@ -5,7 +5,7 @@ require 'pathname'
 module Coveralls
   module SimpleCov
     class Formatter
-      def display_result(result)
+      def display_result(result) # rubocop:disable Naming/PredicateMethod
         # Log which files would be submitted.
         if result.files.empty?
           Coveralls::Output.puts '[Coveralls] There are no covered files.', color: 'yellow'
@@ -91,7 +91,7 @@ module Coveralls
         display_error e
       end
 
-      def display_error(error)
+      def display_error(error) # rubocop:disable Naming/PredicateMethod
         Coveralls::Output.puts 'Coveralls encountered an exception:', color: 'red'
         Coveralls::Output.puts error.class.to_s, color: 'red'
         Coveralls::Output.puts error.message, color: 'red'
