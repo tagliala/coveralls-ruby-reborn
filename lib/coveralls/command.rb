@@ -6,7 +6,7 @@ module Coveralls
   class CommandLine < Thor
     desc 'push', 'Runs your test suite and pushes the coverage results to Coveralls.'
     def push
-      return unless ensure_can_run_locally!
+      return unless can_run_locally?
 
       ENV['COVERALLS_RUN_LOCALLY'] = 'true'
       cmds = ['bundle exec rake']
@@ -68,7 +68,7 @@ module Coveralls
       end
     end
 
-    def ensure_can_run_locally!
+    def can_run_locally?
       if config[:repo_token].nil?
         Coveralls::Output.puts 'Coveralls cannot run locally because no repo_secret_token is set in .coveralls.yml', color: 'red'
         Coveralls::Output.puts 'Please try again when you get your act together.', color: 'red'
