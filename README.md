@@ -168,7 +168,7 @@ Psst... you don't need this gem on GitHub Actions.
 For a Rails application, just add
 
 ```rb
-gem 'simplecov-lcov', '~> 0.8.0'
+gem 'simplecov-lcov', '~> 0.9.0'
 ```
 
 to your `Gemfile` and
