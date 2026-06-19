@@ -3,11 +3,13 @@ updates:
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
-      interval: daily
-      time: "04:00"
+      interval: weekly
+    cooldown:
+      default-days: 5
   - package-ecosystem: bundler
     directory: "/"
     schedule:
-      interval: daily
-      time: "04:00"
+      interval: weekly
     open-pull-requests-limit: 10
+    cooldown:
+      default-days: 5

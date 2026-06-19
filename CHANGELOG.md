@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.29.1 / 2026-06-19
+
+* [ENHANCEMENT] Minor internal updates [#61](https://github.com/tagliala/coveralls-ruby-reborn/pull/61)
+
 ## 0.29.0 / 2025-06-15
 
 * [ENHANCEMENT] Prefer `require_relative` for internal requires [#51](https://github.com/tagliala/coveralls-ruby-reborn/pull/51)

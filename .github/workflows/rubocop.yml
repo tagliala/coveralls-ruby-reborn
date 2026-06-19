@@ -12,21 +12,16 @@ permissions:
 jobs:
   rubocop:
     name: RuboCop
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     env:
       BUNDLE_JOBS: 4
       BUNDLE_RETRY: 3
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        ruby-version: ['3.4']
-
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7.0.0
     - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
+      uses: ruby/setup-ruby@v1.313.0
       with:
-        ruby-version: ${{ matrix.ruby-version }}
+        ruby-version: '4.0'
         bundler-cache: true
     - name: Ruby linter
       run: bundle exec rubocop --format github
