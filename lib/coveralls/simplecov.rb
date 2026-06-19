@@ -38,7 +38,7 @@ module Coveralls
           properties = {}
 
           # Get Source
-          properties[:source] = File.open(file.filename, 'rb:utf-8').read
+          properties[:source] = File.open(file.filename, 'rb:utf-8', &:read)
 
           # Get the root-relative filename
           properties[:name] = short_filename(file.filename)
