@@ -17,16 +17,16 @@ module Coveralls
 
   module_function
 
-  def wear!(simplecov_setting = nil, &block)
+  def wear!(simplecov_setting = nil, &)
     setup!
-    start! simplecov_setting, &block
+    start!(simplecov_setting, &)
   end
 
-  def wear_merged!(simplecov_setting = nil, &block)
+  def wear_merged!(simplecov_setting = nil, &)
     require 'simplecov'
     @adapter = :simplecov
     ::SimpleCov.formatter = NilFormatter
-    start! simplecov_setting, &block
+    start!(simplecov_setting, &)
   end
 
   def push!
@@ -62,7 +62,7 @@ module Coveralls
   def start!(simplecov_setting = 'test_frameworks', &block)
     return unless @adapter == :simplecov
 
-    ::SimpleCov.add_filter 'vendor'
+    ::SimpleCov.skip 'vendor'
 
     if simplecov_setting
       Coveralls::Output.puts("[Coveralls] Using SimpleCov's '#{simplecov_setting}' settings.", color: 'green')

@@ -43,7 +43,7 @@ describe Coveralls do
     it 'receives block' do
       silence do
         described_class.wear! do
-          add_filter 's'
+          skip 's'
         end
       end
 
@@ -72,7 +72,7 @@ describe Coveralls do
     it 'sets formatter to NilFormatter' do
       silence do
         described_class.wear_merged! 'rails' do
-          add_filter '/spec/'
+          skip '/spec/'
         end
       end
 
@@ -82,7 +82,7 @@ describe Coveralls do
 
   describe '#push!' do
     let(:coverage_hash) do
-      { 'file.rb'=>{ 'lines'=>[nil] } }
+      { __FILE__ => { 'lines' => [nil] } }
     end
 
     before do

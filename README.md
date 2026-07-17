@@ -17,7 +17,7 @@ An up-to-date fork of [lemurheavy/coveralls-ruby](https://github.com/lemurheavy/
 - Building on a supported CI service (see
   [supported CI services](https://docs.coveralls.io/ci-services) here)
 - Any Ruby project or test framework supported by
-  [SimpleCov](https://github.com/colszowka/simplecov) is supported by the
+  [SimpleCov](https://github.com/simplecov-ruby/simplecov) is supported by the
   [coveralls-ruby-reborn](https://github.com/tagliala/coveralls-ruby-reborn) gem. This includes
   all your favorites, like [RSpec](https://rspec.info/), Cucumber, and Test::Unit.
 
@@ -86,7 +86,7 @@ should be at the **very top** of your `spec_helper.rb`, `test_helper.rb`, or `en
 
 And holy moly, you're done!
 
-Next time your project is built on CI, [SimpleCov](https://github.com/colszowka/simplecov) will dial
+Next time your project is built on CI, [SimpleCov](https://github.com/simplecov-ruby/simplecov) will dial
 up [Coveralls.io](https://coveralls.io) and send the hot details on your code coverage.
 
 ### SIMPLECOV CUSTOMIZATION
@@ -94,7 +94,7 @@ up [Coveralls.io](https://coveralls.io) and send the hot details on your code co
 *"But wait!"* you're saying, *"I already use SimpleCov, and I have some custom settings! Are you
 really just overriding everything I've already set up?"*
 
-Good news, just use this gem's [SimpleCov](https://github.com/colszowka/simplecov) formatter
+Good news, just use this gem's [SimpleCov](https://github.com/simplecov-ruby/simplecov) formatter
 directly:
 
 ```ruby
@@ -103,7 +103,7 @@ require 'coveralls'
 
 SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 SimpleCov.start do
-  add_filter 'app/secrets'
+  skip 'app/secrets'
 end
 ```
 
@@ -125,7 +125,7 @@ SimpleCov.start
 If you're using more than one test suite and want the coverage results to be merged, use
 `Coveralls.wear_merged!` instead of `Coveralls.wear!`.
 
-Or, if you're using Coveralls alongside another [SimpleCov](https://github.com/colszowka/simplecov)
+Or, if you're using Coveralls alongside another [SimpleCov](https://github.com/simplecov-ruby/simplecov)
 formatter, simply omit the Coveralls formatter, then add the rake task `coveralls:push` to your
 `Rakefile` as a dependency to your testing task, like so:
 
@@ -136,7 +136,7 @@ task :test_with_coveralls => [:spec, :features, 'coveralls:push']
 ```
 
 This will prevent Coveralls from sending coverage data after each individual suite, instead waiting
-until [SimpleCov](https://github.com/colszowka/simplecov) has merged the results, which are then
+until [SimpleCov](https://github.com/simplecov-ruby/simplecov) has merged the results, which are then
 posted to [Coveralls.io](https://coveralls.io).
 
 Unless you've added `coveralls:push` to your default rake task, your build command will need to be
@@ -146,7 +146,7 @@ updated on your CI to reflect this, for example:
 bundle exec rake :test_with_coveralls
 ```
 
-*Read more about [SimpleCov's result merging](https://github.com/colszowka/simplecov#merging-results).*
+*Read more about [SimpleCov's result merging](https://github.com/simplecov-ruby/simplecov#merging-results).*
 
 ### MANUAL BUILDS VIA CLI
 
@@ -165,30 +165,17 @@ specified in `.coveralls.yml`.
 
 Psst... you don't need this gem on GitHub Actions.
 
-For a Rails application, just add
-
-```rb
-gem 'simplecov-lcov', '~> 0.9.0'
-```
-
-to your `Gemfile` and
+Add
 
 ```rb
 require 'simplecov'
 
 SimpleCov.start 'rails' do
-  if ENV['CI']
-    require 'simplecov-lcov'
+  if ENV['GITHUB_ACTIONS']
+    source_in_json false
 
-    SimpleCov::Formatter::LcovFormatter.config do |c|
-      c.report_with_single_file = true
-      c.single_report_path = 'coverage/lcov.info'
-    end
-
-    formatter SimpleCov::Formatter::LcovFormatter
+    formatter SimpleCov::Formatter::JSONFormatter
   end
-
-  add_filter %w[version.rb initializer.rb]
 end
 ```
 
