@@ -30,7 +30,7 @@ describe Coveralls::SimpleCov::Formatter do
       source_fixture('sample.rb')                 => { lines: [nil, 1, 1, 1, nil, 0, 1, 1, nil, nil] }
     }
 
-    SimpleCov::Result.new(options)
+    SimpleCov::Result.new(options, filter_config: SimpleCov::Result::FilterConfig.new(filters: [], cover_filters: []))
   end
 
   describe '#format' do

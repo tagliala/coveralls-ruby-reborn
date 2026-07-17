@@ -6,9 +6,9 @@ class Foo
     @foo = 'baz'
   end
 
-  # :nocov:
+  # simplecov:disable
   def bar
     @foo
   end
-  # :nocov:
+  # simplecov:enable
 end

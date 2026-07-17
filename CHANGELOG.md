@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0 / 2026-07-18
+
+* [BREAKING CHANGE] SimpleCov 1.0 compatibility [#64](https://github.com/tagliala/coveralls-ruby-reborn/pull/64)
+
 ## 0.29.1 / 2026-06-19
 
 * [ENHANCEMENT] Minor internal updates [#61](https://github.com/tagliala/coveralls-ruby-reborn/pull/61)
