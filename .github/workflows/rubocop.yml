@@ -17,7 +17,7 @@ jobs:
       BUNDLE_JOBS: 4
       BUNDLE_RETRY: 3
     steps:
-    - uses: actions/checkout@v7.0.0
+    - uses: actions/checkout@v7.0.1
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1.316.0
       with:
