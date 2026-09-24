@@ -111,7 +111,7 @@ describe Coveralls do
     end
 
     context 'when SimpleCov is not defined' do
-      # rubocop:disable RSpec/LeakyConstantDeclaration
+      # rubocop:disable-next RSpec/LeakyConstantDeclaration
       it 'tries to load it' do
         SimpleCovTmp = SimpleCov
         Object.send :remove_const, :SimpleCov # rubocop:disable RSpec/RemoveConst
@@ -121,7 +121,6 @@ describe Coveralls do
       ensure
         SimpleCov = SimpleCovTmp
       end
-      # rubocop:enable RSpec/LeakyConstantDeclaration
     end
   end
 end
